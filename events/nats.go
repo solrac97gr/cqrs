@@ -21,7 +21,7 @@ type NatsEventStore struct {
 
 var _ EventStore = &NatsEventStore{}
 
-func NewNatsEventStore(url string) (*NatsEventStore, error) {
+func NewNats(url string) (*NatsEventStore, error) {
 	conn, err := nats.Connect(url)
 	if err != nil {
 		return nil, err
